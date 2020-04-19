@@ -1,67 +1,68 @@
+/* eslint no-alert: 0 */
+/* eslint class-methods-use-this: 0 */
 export default class Game {
   constructor(newBoard) {
+    this.indexPrevious = 0;
+    this.indexCurrent = 0;
+    this.bump = 0;
+    this.points = document.getElementById('points');
+    this.miss = 0;
     this.newBoard = newBoard;
     this.boardSize = newBoard.boardSize;
-    this.cellPrevious = 0;
-    this.celCurrent = 0;
-    this.hit = 0;
-    this.hitPoints = document.getElementById('points');
-    this.missed = 0;
     this.interval = 0;
   }
 
-  startGame() {
+  init() {
     this.newBoard.board.addEventListener('click', (e) => {
-      this.clickCell(e);
+      this.clickOnBoard(e);
     });
     this.jumpImg();
   }
 
-  clickCell(e) {
-    if (e.target.id !== 'goblin') {
+  clickOnBoard(event) {
+    if (event.target.id !== 'goblin') {
       return;
     }
-    this.addHitPoints();
-    this.clearCell(e.target);
+    this.addPoints();
+    this.clearCell(event.target);
   }
 
-  addHitPoints() {
-    this.missed = 0;
-    this.hit += 1;
-    this.hitPoints.innerHTML = this.hit;
+  addPoints() {
+    if (this.bump < 5) {
+      this.miss = 0;
+      this.bump += 1;
+      this.points.innerHTML = this.bump;
+    } else {
+      alert('YAY! YOU CAUGHT THE GOBLIN! YOU WON!');
+    }
   }
 
-  /* eslint-disable */
-  clearCell(e) {
-    const Goblin = e;
+  clearCell(event) {
+    const Goblin = event;
     Goblin.parentNode.innerHTML = '';
   }
 
-  moveToAnotherCell() {
+  jumpImg() {
     this.interval = setInterval(() => {
-      this.checkPlayerMove();
+      this.changePosition();
     }, 1000);
   }
-  
-  checkPlayerMove() {
-    do {
-      this.cellCurrent = Math.floor(Math.random() * this.boardSize); // true
-    } while (this.cellCurrent === this.cellPrevious); // false
 
-    if (this.cellPrevious >= 0) {
-      const indexPrevious = document.getElementById(`field${this.oldPosition}`);
-      indexPrevious.innerHTML = '';
+  changePosition() {
+    do {
+      this.indexCurrent = Math.floor(Math.random() * this.boardSize); // true
+    } while (this.indexCurrent === this.indexPrevious); // false
+    if (this.indexPrevious >= 0) {
+      const oldItemField = document.getElementById(`field${this.indexPrevious}`);
+      oldItemField.innerHTML = '';
     }
-    const indexCurrent = document.getElementById(`field${this.cellCurrent}`);
-    indexCurrent.innerHTML = '<img id = "goblin" src = "./goblin.png">';
-    this.cellPrevious = this.cellCurrent;
-    this.missed += 1;
-    if (this.missed > 5) {
+    const itemField = document.getElementById(`field${this.indexCurrent}`);
+    itemField.innerHTML = '<img id = "goblin" src = "./goblin.png">';
+    this.indexPrevious = this.indexCurrent;
+    this.miss += 1;
+    if (this.miss > 5) {
       clearInterval(this.interval);
-      alert('GAME OVER');
-    }
-    if (this.hit === 10) {
-      alert('YOU WON');
+      alert('Oh NO! THE GOBLIN RUN AWAY! GAME OVER!');
     }
   }
 }
