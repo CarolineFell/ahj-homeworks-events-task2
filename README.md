@@ -1,6 +1,6 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/smfn4rg3dt7bfosi/branch/master?svg=true)](https://ci.appveyor.com/project/CarolineFell/ahj-homeworks-dom-version2/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/r020rk5rv5u3yk1n/branch/master?svg=true)](https://ci.appveyor.com/project/CarolineFell/ahj-homeworks-events-task2/branch/master)
 
-https://carolinefell.github.io/ahj-homeworks-events/
+
 
 ---
 
