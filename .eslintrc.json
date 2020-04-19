@@ -15,7 +15,7 @@
     },
     "rules": {
         "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
-        "linebreak-style": ["error", "windows"],
+        "linebreak-style": 0,
         "eol-last": ["error", "never"],
         "import/no-extraneous-dependencies": [
             "error", {
