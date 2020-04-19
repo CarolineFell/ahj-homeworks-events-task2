@@ -16,7 +16,7 @@
     "rules": {
         "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
         "linebreak-style": 0,
-        "eol-last": ["error", "never"],
+        "eol-last": 0,
         "import/no-extraneous-dependencies": [
             "error", {
                 "devDependencies": true

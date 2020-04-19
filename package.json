@@ -1,5 +1,5 @@
 {
-  "name": "ahj-homeworks-events",
+  "name": "ahj-homeworks-events-task2",
   "version": "1.0.0",
   "description": "events",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CarolineFell/ahj-homeworks-events.git"
+    "url": "git+https://github.com/CarolineFell/ahj-homeworks-events-task2.git"
   },
   "keywords": [
     "events"
@@ -19,9 +19,9 @@
   "author": "CarolineFell",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CarolineFell/ahj-homeworks-events/issues"
+    "url": "https://github.com/CarolineFell/ahj-homeworks-events-task2/issues"
   },
-  "homepage": "https://github.com/CarolineFell/ahj-homeworks-events#readme",
+  "homepage": "https://github.com/CarolineFell/ahj-homeworks-events-task2.git#readme",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",

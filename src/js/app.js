@@ -1,7 +1,4 @@
-import Board from './board';
-import Game from './game';
+import TasksList from './TasksList';
 
-const gamesBoard = new Board(4);
-gamesBoard.drawBoard();
-const game = new Game(gamesBoard);
-game.init();
+const tasksList = new TasksList();
+tasksList.init();

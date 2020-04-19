@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Catch the Goblin</title>
-  </head>
-  <body class="body">
-    <div id="board"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TOP Tasks</title>
+</head>
+<body>
+  <div class="form-tasks">
+    <div class="error hidden">
+      <xpan>Type the task</xpan>
+      <span class="close-error">x</span>
+    </div>
+    <form id="input-form">
+      <h2>TOP Tasks</h2>
+      <input type="text" id="input-task" placeholder="Type your task">
+    </form>
+  
+    <h3>PINNED Tasks:</h3>
+    <div id="pinned" class="div-task"></div>
+  
+    <h3>ALL Tasks:</h3>
+    <div id="all-tasks" class="div-task"></div>
+  </div>
+</body>
 </html>
